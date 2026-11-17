@@ -7,61 +7,66 @@ using std::cout;
 // Project 3 — Joe Barron
 // CIS 5 Week 12 · Fifty students
 // Do not edit the boilerplate. It randomly generates 50 scores.
-// Do not type scores or names into this file.
+// Do not type scores or names into this file. - Roger
 
-void countGrades(const int scores[], int n, int& a, int& b, int& c, int& d, int& failing) {
+void countGrades(const int scores[], int n, int& a, int& b, int& c, int& d, int& failing) 
+{
   a = 0;
   b = 0;
   c = 0;
   d = 0;
   failing = 0;
   if (n <= 0 || scores == nullptr) return;
-  for (int i = 0; i < n; ++i) {
-	  if (scores[i] >= 90) {
+  for (int i = 0; i < n; ++i) 
+  {
+	  if (scores[i] >= 90) 
+	  {
 		  ++a;
 	  }
-	  else if (scores[i] >= 80) {
+	  else if (scores[i] >= 80) 
+	  {
 		  ++b;
 	  }
-	  else if (scores[i] >= 70) {
+	  else if (scores[i] >= 70) 
+	  {
 		  ++c;
 	  }
-	  else if (scores[i] >= 60) {
+	  else if (scores[i] >= 60) 
+	  {
 		  ++d;
 	  }
 	  else {
 		  ++failing;
 	  }
   }
-  // TODO: for loop. Add 1 to the matching count.
-  // A is 90 and up. B is 80 to 89. C is 70 to 79. D is 60 to 69.
-  // Failing is below 60. A 60 is a D. Do not print.
+
 }
 
-double average(const int scores[], int n) {
+double average(const int scores[], int n) 
+{
   if (n <= 0 || scores == nullptr) return 0.0;
-  // TODO: return the mean as a double (sum * 1.0 / n). Do not print.
+  
   int sum = 0;
-  for (int i = 0; i < n; ++i) {
-    sum += scores[i];
+  for (int i = 0; i < n; ++i) 
+  {
+    sum += scores[i]; 
   }
   return sum * 1.0 / n;
 }
 
-void officeHours(const int scores[], int n, int* failingCount) {
-  if (failingCount != nullptr) *failingCount = 0;
-  if (n <= 0 || scores == nullptr) return;
-  while (n > 0) {
+void officeHours(const int scores[], int n, int* failingCount) 
+{
+  if (failingCount != nullptr) *failingCount = 0; 
+  if (n <= 0 || scores == nullptr) return;        
+  while (n > 0) 
+  {
 	  --n;
-	  if (scores[n] < 60) {
+	  if (scores[n] < 60)
+	  {
 		  cout << "Student at index " << n << " needs to come to office hours.\n";
-		  if (failingCount != nullptr) ++(*failingCount);
-	  }
+		  if (failingCount != nullptr) ++(*failingCount); 
+	  } 
   }
-  // TODO: while loop. If scores[i] is under 60, print:
-  // Student at index i needs to come to office hours.
-  // If failingCount is not nullptr, write how many lines you printed
-  // through *failingCount. If it is nullptr, do not write through it.
 }
 
 int main() {
